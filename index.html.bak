@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPSTAR LLC - Reliable Trucking Services</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "CPSTAR LLC",
+      "url": "https://cpstarllc.com"
+    }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Custom Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .animate-fadeInLeft {
+            animation: fadeInLeft 0.8s ease-out forwards;
+        }
+        
+        .animate-fadeInRight {
+            animation: fadeInRight 0.8s ease-out forwards;
+        }
+        
+        .animate-slideInDown {
+            animation: slideInDown 0.6s ease-out forwards;
+        }
+        
+        .animate-pulse-custom {
+            animation: pulse 2s infinite;
+        }
+        
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+        .delay-600 { animation-delay: 0.6s; }
+        
+        /* Hero Section Styling */
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('background.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .stepdeck-bg {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('stepdeck-bg.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Logo Styling */
+        .logo-container {          
+            width: 110px;          
+            height: 110px;          
+            background-image: url('logo.png');          
+            background-size: contain;          
+            background-repeat: no-repeat;          
+            background-position: center;
+        }
+        
+        /* Scroll to top button */
+        #scrollToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 18px;
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        #scrollToTopBtn:hover {
+            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(59, 130, 246, 0.4);
+        }
+        
+        /* Custom gradient backgrounds */
+        .gradient-blue {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        }
+        
+        .gradient-light {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+        
+        /* Service card hover effects */
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Navigation enhancements */
+        .nav-link {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #3b82f6, #1e40af);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::before {
+            width: 100%;
+        }
+        
+        /* Form enhancements */
+        .form-input {
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2);
+        }
+        
+        /* Intersection Observer Animation Classes */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            visibility: hidden;
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out, visibility 0.8s ease-out;
+        }
+        
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+            visibility: visible;
+        }
+        
+        /* Stats counter animation */
+        .counter {
+            font-weight: 700;
+            color: #1e40af;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <button id="scrollToTopBtn" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- Enhanced Header -->
+    <header class="bg-white/95 backdrop-blur-md shadow-lg py-0 sticky top-0 z-50 animate-slideInDown">
+        <nav class="container mx-auto flex justify-between items-center flex-wrap">
+            <a href="index.html" class="flex items-center text-2xl font-bold text-blue-700 rounded-md p-0 hover:scale-105 transition-transform duration-300">
+                <div class="logo-container mr-3"></div>
+                <span class="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">CPSTAR LLC</span>
+            </a>
+            <div class="block lg:hidden">
+                <button id="nav-toggle" class="flex items-center px-3 py-0 border rounded text-blue-700 border-blue-400 hover:text-blue-900 hover:border-blue-900 transition-all duration-300">
+                    <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Menu</title>
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+                    </svg>
+                </button>
+            </div>
+            <div id="nav-content" class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-4 lg:mt-0">
+                <div class="text-sm lg:flex-grow">
+                    <a href="#home" class="nav-link block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-800 mr-6 p-2 rounded-md transition duration-300 ease-in-out hover:bg-blue-50">Home</a>
+                    <a href="#services" class="nav-link block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-800 mr-6 p-2 rounded-md transition duration-300 ease-in-out hover:bg-blue-50">Services</a>
+                    <a href="#about" class="nav-link block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-800 mr-6 p-2 rounded-md transition duration-300 ease-in-out hover:bg-blue-50">About Us</a>
+                    <a href="#contact" class="nav-link block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-800 mr-6 p-2 rounded-md transition duration-300 ease-in-out hover:bg-blue-50">Contact</a>
+                    <a href="privacy-policy.html" class="nav-link block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-800 p-2 rounded-md transition duration-300 ease-in-out hover:bg-blue-50">Privacy Policy</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Enhanced Hero Section -->
+    <section id="home" class="hero-bg relative text-white py-20 px-4 md:py-32 flex items-center justify-center min-h-screen">
+        <div class="container mx-auto text-center z-10">
+            <h1 class="text-5xl md:text-7xl font-black leading-tight mb-6 animate-fadeInUp">
+                <span class="block text-white drop-shadow-2xl">Your Trusted Partner</span>
+                <span class="block bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent drop-shadow-lg">in Transportation</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto animate-fadeInUp delay-200 text-gray-100 font-light leading-relaxed">
+                Delivering excellence across the nation with reliable, efficient, and safe trucking solutions that keep America moving forward.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp delay-400">
+                <a href="#services" class="gradient-blue hover:shadow-2xl px-10 py-4 rounded-full text-lg font-semibold shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 hover:-translate-y-1">
+                    <i class="fas fa-truck mr-2"></i>Explore Our Services
+                </a>
+                <a href="#contact" class="bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:bg-white/20 px-10 py-4 rounded-full text-lg font-semibold shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 hover:-translate-y-1">
+                    <i class="fas fa-phone mr-2"></i>Get Quote
+                </a>
+            </div>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40"></div>
+        
+        <!-- Floating elements -->
+        <div class="absolute top-20 left-10 animate-float delay-100">
+            <i class="fas fa-star text-blue-300 text-2xl opacity-60"></i>
+        </div>
+        <div class="absolute top-40 right-20 animate-float delay-300">
+            <i class="fas fa-star text-blue-400 text-lg opacity-40"></i>
+        </div>
+        <div class="absolute bottom-40 left-20 animate-float delay-500">
+            <i class="fas fa-star text-cyan-300 text-xl opacity-50"></i>
+        </div>
+        <div class="absolute bottom-40 right-20 animate-float delay-300">
+            <i class="fas fa-star text-blue-400 text-lg opacity-40"></i>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 gradient-blue text-white fade-in-section">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="animate-fadeInUp delay-100">
+                    <div class="text-4xl md:text-5xl font-black mb-2">
+                        <span class="counter" data-target="100000">0</span>+
+                    </div>
+                    <p class="text-blue-100 font-medium">Loads Delivered</p>
+                </div>
+                <div class="animate-fadeInUp delay-200">
+                    <div class="text-4xl md:text-5xl font-black mb-2">
+                        <span class="counter" data-target="48">0</span>+
+                    </div>
+                    <p class="text-blue-100 font-medium">States Covered</p>
+                </div>
+                <div class="animate-fadeInUp delay-300">
+                    <div class="text-4xl md:text-5xl font-black mb-2">
+                        <span class="counter" data-target="99">0</span>%
+                    </div>
+                    <p class="text-blue-100 font-medium">On-Time Delivery</p>
+                </div>
+                <div class="animate-fadeInUp delay-400">
+                    <div class="text-4xl md:text-5xl font-black mb-2">
+                        <span class="counter" data-target="24">0</span>/7
+                    </div>
+                    <p class="text-blue-100 font-medium">Support Available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Enhanced Step Deck Services Section -->
+<section id="services" class="stepdeck-bg py-20 px-4 relative text-white fade-in-section bg-fixed bg-cover bg-center">
+    <div class="absolute inset-0 bg-black/5"></div>
+    <div class="container mx-auto text-center relative z-10">
+        <h2 class="text-4xl md:text-5xl font-black text-white mb-6 animate-fadeInUp">Step Deck Hauling Experts</h2>
+        <p class="text-xl text-gray-100 mb-16 max-w-3xl mx-auto animate-fadeInUp delay-200">
+            We specialize exclusively in step deck transportation, providing the flexibility and capacity to move tall, heavy, and specialized cargo with confidence.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div class="service-card bg-white/20 backdrop-blur-md p-10 rounded-2xl shadow-xl hover:shadow-2xl animate-fadeInUp delay-100">
+                <div class="text-cyan-300 mb-6 animate-float">
+                    <i class="fas fa-box-open text-5xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">Oversized Loads</h3>
+                <p class="text-gray-200 leading-relaxed mb-6">
+                    Haul tall and overheight cargo without permits needed for flatbeds. Ideal for large machinery, equipment, and prefab structures.
+                </p>
+                <div class="flex justify-center">
+                    <span class="bg-cyan-100/20 text-cyan-200 px-4 py-2 rounded-full text-sm font-semibold">Flexible Clearance</span>
+                </div>
+            </div>
+
+            <div class="service-card bg-white/20 backdrop-blur-md p-10 rounded-2xl shadow-xl hover:shadow-2xl animate-fadeInUp delay-200">
+                <div class="text-cyan-300 mb-6 animate-float delay-100">
+                    <i class="fas fa-dolly-flatbed text-5xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">Heavy Equipment</h3>
+                <p class="text-gray-200 leading-relaxed mb-6">
+                    Safely transport construction vehicles, agricultural machines, and industrial gear on our durable step deck trailers.
+                </p>
+                <div class="flex justify-center">
+                    <span class="bg-blue-100/20 text-blue-200 px-4 py-2 rounded-full text-sm font-semibold">Secure Loading</span>
+                </div>
+            </div>
+
+            <div class="service-card bg-white/20 backdrop-blur-md p-10 rounded-2xl shadow-xl hover:shadow-2xl animate-fadeInUp delay-300">
+                <div class="text-cyan-300 mb-6 animate-float delay-200">
+                    <i class="fas fa-road text-5xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">Nationwide Coverage</h3>
+                <p class="text-gray-200 leading-relaxed mb-6">
+                    From coast to coast, we deliver with precision, professionalism, and full compliance across all 48 states.
+                </p>
+                <div class="flex justify-center">
+                    <span class="bg-purple-100/20 text-purple-200 px-4 py-2 rounded-full text-sm font-semibold">48-State Network</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Enhanced About Section -->
+    <section id="about" class="py-20 px-4 bg-white fade-in-section">
+        <div class="container mx-auto">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="animate-fadeInLeft">
+                    <h2 class="text-4xl md:text-5xl font-black text-blue-800 mb-8">About CPSTAR LLC</h2>
+                    <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                        CPSTAR LLC is a leading trucking company dedicated to providing exceptional transportation services across the United States. With years of experience in the logistics industry, we pride ourselves on our commitment to safety, efficiency, and customer satisfaction.
+                    </p>
+                    <p class="text-lg text-gray-600 leading-relaxed mb-6">
+                        Our modern fleet and experienced drivers ensure that your cargo is handled with the utmost care and delivered on time, every time. We understand the critical importance of reliable transportation to your business.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <div class="flex items-center bg-blue-50 px-4 py-2 rounded-full">
+                            <i class="fas fa-shield-alt text-blue-600 mr-2"></i>
+                            <span class="text-blue-800 font-semibold">Safety First</span>
+                        </div>
+                        <div class="flex items-center bg-green-50 px-4 py-2 rounded-full">
+                            <i class="fas fa-clock text-green-600 mr-2"></i>
+                            <span class="text-green-800 font-semibold">On-Time Delivery</span>
+                        </div>
+                        <div class="flex items-center bg-purple-50 px-4 py-2 rounded-full">
+                            <i class="fas fa-handshake text-purple-600 mr-2"></i>
+                            <span class="text-purple-800 font-semibold">Trusted Partner</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-fadeInRight">
+                    <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-3xl shadow-2xl">
+                        <h3 class="text-2xl font-bold text-blue-800 mb-6">Why Choose Us?</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-blue-600 text-white rounded-full p-2 mr-4 mt-1">
+                                    <i class="fas fa-check text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Modern Fleet</h4>
+                                    <p class="text-gray-600">State-of-the-art trucks and trailers</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-blue-600 text-white rounded-full p-2 mr-4 mt-1">
+                                    <i class="fas fa-check text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Experienced Drivers</h4>
+                                    <p class="text-gray-600">Professional and certified operators</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-blue-600 text-white rounded-full p-2 mr-4 mt-1">
+                                    <i class="fas fa-check text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Real-time Tracking</h4>
+                                    <p class="text-gray-600">Monitor your shipment 24/7</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Contact Section -->
+    <section id="contact" class="py-20 px-4 gradient-blue text-white fade-in-section">
+        <div class="container mx-auto text-center max-w-4xl">
+            <h2 class="text-4xl md:text-5xl font-black mb-6 animate-fadeInUp">Get in Touch</h2>
+            <p class="text-xl mb-12 text-blue-100 animate-fadeInUp delay-200">
+                Ready to discuss your transportation needs? Contact us today for a quote or to learn more about our services.
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
+                <div class="animate-fadeInLeft">
+                    <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                        <div class="space-y-4 text-left">
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-2xl text-blue-300 mr-4"></i>
+                                <div>
+                                    <p class="font-semibold">Email Us:</p>
+                                    <a href="mailto:info@cpstarllc.com" class="text-blue-200 hover:text-white transition-colors">info@cpstarllc.com</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-2xl text-blue-300 mr-4"></i>
+                                <div>
+                                    <p class="font-semibold">Call Us:</p>
+                                    <a href="tel:+17257778789" class="text-blue-200 hover:text-white transition-colors">+1 (725) 777-8789</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-clock text-2xl text-blue-300 mr-4"></i>
+                                <div>
+                                    <p class="font-semibold">Available:</p>
+                                    <p class="text-blue-200">24/7 Support</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="animate-fadeInRight">
+                    <form class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold mb-6">Send us a Message</h3>
+                        <div class="space-y-4">
+                            <input type="text" id="name" name="name" placeholder="Your Name" class="form-input w-full p-4 rounded-xl bg-white/20 border border-white/30 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent" required>
+                            <input type="email" id="email" name="email" placeholder="Your Email" class="form-input w-full p-4 rounded-xl bg-white/20 border border-white/30 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent" required>
+                            <textarea id="message" name="message" rows="4" placeholder="Your Message" class="form-input w-full p-4 rounded-xl bg-white/20 border border-white/30 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent resize-none" required></textarea>
+                            <button type="submit" class="w-full bg-white text-blue-700 hover:bg-blue-50 px-8 py-4 rounded-xl text-lg font-bold shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 hover:-translate-y-1">
+                                <i class="fas fa-paper-plane mr-2"></i>Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="mt-16 animate-fadeInUp delay-400">
+                <h3 class="text-3xl font-bold mb-6 text-white">Our Location</h3>
+                <div class="rounded-2xl overflow-hidden shadow-2xl">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d417.09095310021473!2d-115.22587403741257!3d36.02108988317075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8c8f0473d8df7%3A0xf74152a1fb813f13!2s9275%20S%20Jones%20Blvd%2C%20Las%20Vegas%2C%20NV%2089141!5e1!3m2!1sen!2sus!4v1752037183537!5m2!1sen!2sus" 
+                        class="w-full h-[450px]"
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12 px-4">
+        <div class="container mx-auto text-center">
+            <div class="flex justify-center items-center mb-6">
+                <div class="logo-container mr-3 opacity-80"></div>
+                <span class="text-2xl font-bold text-white">CPSTAR LLC</span>
+            </div>
+            <p class="mb-6">&copy; 2025 CPSTAR LLC. All rights reserved.</p>
+            <div class="flex justify-center space-x-6 text-sm">
+                <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                <a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Toggle mobile navigation
+        const navToggle = document.getElementById('nav-toggle');
+        const navContent = document.getElementById('nav-content');
+        navToggle.addEventListener('click', function () {
+            navContent.classList.toggle('hidden');
+        });
+
+        // Scroll to top button functionality
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        };
+
+        scrollToTopBtn.addEventListener("click", function() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Counter animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const increment = target / 100;
+                let current = 0;
+                
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        counter.textContent = Math.ceil(current);
+                        setTimeout(updateCounter, 20);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+                
+                updateCounter();
+            });
+        }
+
+        // Trigger counter animation when stats section is visible
+        const statsSection = document.querySelector('.gradient-blue');
+        const statsObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // Form submission (placeholder)
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+        });
+    </script>
+</body>
+</html>
