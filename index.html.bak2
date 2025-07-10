@@ -130,12 +130,12 @@
         }
 
         /* Logo Styling */
-        .logo-container {        
-            width: 110px;        
-            height: 110px;        
-            background-image: url('logo.png');        
-            background-size: contain;        
-            background-repeat: no-repeat;        
+        .logo-container {          
+            width: 110px;          
+            height: 110px;          
+            background-image: url('logo.png');          
+            background-size: contain;          
+            background-repeat: no-repeat;          
             background-position: center;
         }
         
@@ -261,6 +261,11 @@
                     <a href="#about" class="nav-link block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-800 mr-6 p-2 rounded-md transition duration-300 ease-in-out hover:bg-blue-50">About Us</a>
                     <a href="#contact" class="nav-link block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-800 mr-6 p-2 rounded-md transition duration-300 ease-in-out hover:bg-blue-50">Contact</a>
                     <a href="privacy-policy.html" class="nav-link block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-800 p-2 rounded-md transition duration-300 ease-in-out hover:bg-blue-50">Privacy Policy</a>
+                </div>
+                 <div class="mt-4 lg:mt-0">
+                    <a href="https://intelliapp.driverapponline.com/c/cpstarllc?uri_b=ia_cpstarllc_1430601781" target="_blank" class="inline-block text-sm px-6 py-3 leading-none border rounded-lg text-white gradient-blue hover:shadow-lg transition-all duration-300 ease-in-out transform hover:-translate-y-0.5 animate-pulse-custom">
+                        Apply Now
+                    </a>
                 </div>
             </div>
         </nav>
@@ -452,7 +457,7 @@
                 Ready to discuss your transportation needs? Contact us today for a quote or to learn more about our services.
             </p>
             
-            <div class="flex justify-center mb-16">
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
                 <div class="animate-fadeInLeft">
                     <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl">
                         <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
@@ -481,6 +486,20 @@
                         </div>
                     </div>
                 </div>
+                
+                <div class="animate-fadeInRight">
+                    <form class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold mb-6">Send us a Message</h3>
+                        <div class="space-y-4">
+                            <input type="text" id="name" name="name" placeholder="Your Name" class="form-input w-full p-4 rounded-xl bg-white/20 border border-white/30 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent" required>
+                            <input type="email" id="email" name="email" placeholder="Your Email" class="form-input w-full p-4 rounded-xl bg-white/20 border border-white/30 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent" required>
+                            <textarea id="message" name="message" rows="4" placeholder="Your Message" class="form-input w-full p-4 rounded-xl bg-white/20 border border-white/30 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent resize-none" required></textarea>
+                            <button type="submit" class="w-full bg-white text-blue-700 hover:bg-blue-50 px-8 py-4 rounded-xl text-lg font-bold shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 hover:-translate-y-1">
+                                <i class="fas fa-paper-plane mr-2"></i>Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
             <div class="mt-16 animate-fadeInUp delay-400">
                 <h3 class="text-3xl font-bold mb-6 text-white">Our Location</h3>
@@ -494,13 +513,6 @@
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
-            </div>
-
-            <div class="mt-16 text-center animate-fadeInUp">
-                <h3 class="text-3xl font-bold mb-8 text-white">Wanna join our team? Apply now below.</h3>
-                <a href="https://intelliapp.driverapponline.com/c/cpstarllc?uri_b=ia_cpstarllc_1430601781" target="_blank" class="inline-block text-lg px-10 py-4 leading-none border rounded-lg text-white gradient-blue hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 animate-pulse-custom">
-                    Apply Now
-                </a>
             </div>
         </div>
     </section>
